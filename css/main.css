@@ -374,7 +374,8 @@ button:focus{
   height: calc(100% - 20px);
   width: 100%;
   padding: 50px 7% 0;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -522,7 +523,7 @@ h3.comment-reply-title:before,
   min-height: calc(80vh - 20px);
   width: calc(100% + 100px);
   margin-top: -50px;
-  margin-left: -50px;
+  margin-left: -45px;
 }
 
 .home-page-third-style .home-content {
@@ -575,6 +576,12 @@ h3.comment-reply-title:before,
 
 .home-page-third-style .home-text h1 span {
   font-weight: 300;
+}
+
+.home-page-third-style .home-text h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 
 .home-page-third-style .home-text h4 {
@@ -655,6 +662,8 @@ h3.comment-reply-title:before,
 }
 
 .info-block-w-icon {
+  display: flex;
+  flex-direction: row;
   margin-bottom: 25px;
 }
 
@@ -664,13 +673,22 @@ h3.comment-reply-title:before,
   padding-right: 22px;
 }
 
-.info-block-w-icon i {
+.info-block-w-icon .ci-icon {
+  display: flex;
+  background-color: #f5f6f7;
+  width: 52px;
+  height: min-content;
+  max-height: 52px;
+  min-width: 52px;
+  padding: 14px;
+  border-radius: 10px;
+  margin-right: 22px;
+}
+
+.info-block-w-icon img {
   position: relative;
   font-size: 28px;
-  background: #f5f6f7;
   display: block;
-  padding: 12px;
-  border-radius: 10px;
 }
 
 .info-block-w-icon .ci-text {
@@ -689,8 +707,9 @@ h3.comment-reply-title:before,
   font-size: 0.9em;
 }
 
-.abilities:not(.owl-loaded) {
-  display: block;
+.abilities {
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
   height: auto;
   min-height: 1px;
@@ -699,6 +718,7 @@ h3.comment-reply-title:before,
 .ability-item {
   padding: 30px;
   margin-bottom: 10px;
+  max-width: 435px;
 }
 
 .ability-content {
@@ -732,11 +752,11 @@ h3.comment-reply-title:before,
   font-style: italic;
 }
 
-.ability-author-info {
+.ability-type-info {
   margin-top: 18px;
 }
 
-.ability-author {
+.ability-type {
   margin: 0 0 2px;
 }
 
@@ -767,38 +787,11 @@ h3.comment-reply-title:before,
   z-index: -1;
 }
 
-.clients:not(.owl-loaded) {
-  display: block;
-  position: relative;
-  height: auto;
-  min-height: 1px;
-}
-
-.clients.owl-carousel .client-block {
-  padding: 15px;
-  margin-bottom: 15px;
-}
-
-.client-block {
-  text-align: center;
-  padding: 5px 0;
-  margin-bottom: 30px;
-  opacity: 1;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.client-block img {
-  max-width: 90%;
-}
-
 .fun-fact {
   position: relative;
   text-align: left;
   width: 100%;
+  height: 157.95px;
   display: block;
   margin: 0 0 15px;
   border: 2px solid #e6e7e8;
@@ -814,7 +807,7 @@ h3.comment-reply-title:before,
 
 .fun-fact h4 {
   font-size: 16px;
-  margin: 0 0 10px;
+  margin: 0 0 5px;
 }
 
 .fun-fact .fun-fact-icon {
@@ -832,24 +825,29 @@ h3.comment-reply-title:before,
   background-color: #f5f6f7;
 }
 
-.fun-fact i {
+.fun-fact img {
   position: relative;
   font-size: 28px;
   color: #858687;
   margin-bottom: 6px;
-  width: 28px;
-  height: 28px;
+  width: 40px !important;
+  max-height: 40px;
   text-align: center;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
+  opacity: .65;
+}
+
+.fun-fact p {
+  line-height: 20px;
 }
 
 .fun-fact-block-value {
   color: #a5a6a7;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
-  line-height: 50px;
+  line-height: 40px;
   display: block;
 }
 
@@ -857,6 +855,7 @@ h3.comment-reply-title:before,
   background-color: #fff;
   border: 2px solid #e6e7e8;
   padding: 40px;
+  height: 370px;
   margin-bottom: 10px;
   border-radius: 8px;
   text-align: left;
@@ -879,7 +878,8 @@ h3.comment-reply-title:before,
 }
 
 .fw-project .fw-package:hover,
-.fw-project .fw-package.highlight:hover {
+.fw-project .fw-package.highlight:hover,
+.fun-fact:hover {
   -webkit-transform: translateY(-9px);
   -ms-transform: translateY(-9px);
   -o-transform: translateY(-9px);
