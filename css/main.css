@@ -710,12 +710,15 @@ h3.comment-reply-title:before,
 .abilities {
   display: flex;
   flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: center;
   position: relative;
   height: auto;
   min-height: 1px;
 }
 
 .ability-item {
+  flex: .333 .333 .333;
   padding: 30px;
   margin-bottom: 10px;
   max-width: 435px;
