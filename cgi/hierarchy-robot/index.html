@@ -1,0 +1,153 @@
+<!--  Hierarchical transformation demo.
+Vertex shader does basic Lambert shading. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hierarchy</title>
+  </head>
+
+  <body>
+    <canvas id="theCanvas" width="720" height="480">
+      Please use a browser that supports "canvas"
+    </canvas>
+
+    <p>* Click button or type equivalent keyboard letter key</p>
+
+    <div class="controls-layout">
+      <div class="row flex justify-center">
+        <button
+          id="head"
+          name="head"
+          title="Rotate head (you can also press 'L')"
+        ></button>
+      </div>
+      <div class="row flex justify-center">
+        <div class="flex flex-col">
+          <button
+            id="rshoulder"
+            name="rshoulder"
+            title="Rotate shoulder (you can also press 'O')"
+          ></button>
+          <button
+            id="rarm"
+            name="rarm"
+            title="Rotate arm (you can also press 'B')"
+          ></button>
+          <button
+            id="rhand"
+            name="rhand"
+            title="Rotate hand (you can also press 'M')"
+          ></button>
+        </div>
+        <div style="min-width: 80px">
+          <button
+            id="torso"
+            name="torso"
+            title="Rotate torso (you can also press 'T')"
+          ></button>
+          <div class="flex justify-between">
+            <div class="flex flex-col">
+              <button
+                id="rleg"
+                name="rleg"
+                title="Rotate leg (you can also press 'C')"
+              ></button>
+              <button
+                id="rfeet"
+                name="rfeet"
+                title="Rotate feet (you can also press 'P')"
+              ></button>
+            </div>
+            <div class="flex flex-col">
+              <button
+                id="lleg"
+                name="lleg"
+                title="Rotate leg (you can also press 'D')"
+              ></button>
+              <button
+                id="lfeet"
+                name="lfeet"
+                title="Rotate feet (you can also press 'F') 'F'"
+              ></button>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <button
+            id="lshoulder"
+            name="lshoulder"
+            title="Rotate shoulder (you can also press 'S')"
+          ></button>
+          <button
+            id="larm"
+            name="larm"
+            title="Rotate arm (you can also press 'A')"
+          ></button>
+          <button
+            id="lhand"
+            name="lhand"
+            title="Rotate hand (you can also press 'H')"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <p id="options"></p>
+
+    <script id="vertexLightingShader" type="x-shader/x-vertex">
+      uniform mat4 model;
+      uniform mat4 view;
+      uniform mat4 projection;
+      uniform vec4 u_Color;
+      uniform mat3 normalMatrix;
+      uniform vec4 lightPosition;
+
+      attribute vec4 a_Position;
+      attribute vec3 a_Normal;
+
+      varying vec4 color;
+      void main()
+      {
+        float ambientFactor = 0.3;
+        vec3 lightDirection = normalize((view * lightPosition - view * model * a_Position).xyz);
+        //vec3 normal = (view * model * vec4(a_Normal, 0.0)).xyz;
+        vec3 normal = normalize(normalMatrix * a_Normal);
+        float diffuseFactor = max(0.0, dot(lightDirection, normal));
+        color = u_Color * diffuseFactor + u_Color * ambientFactor;
+        color.a = 1.0;
+        gl_Position = projection * view * model * a_Position;
+      }
+    </script>
+
+    <script id="fragmentLightingShader" type="x-shader/x-fragment">
+      precision mediump float;
+      varying vec4 color;
+      void main()
+      {
+        gl_FragColor = color;
+      }
+    </script>
+
+    <script type="text/javascript" src="./libs/cuon/cuon-utils.js"></script>
+    <script type="text/javascript" src="./libs/cuon/cuon-matrix.js"></script>
+    <script type="text/javascript" src="Hierarchy.js"></script>
+
+    <script>
+      document.getElementById("head").onclick = actions["l"];
+      document.getElementById("rshoulder").onclick = actions["o"];
+      document.getElementById("torso").onclick = actions["t"];
+      document.getElementById("lshoulder").onclick = actions["s"];
+      document.getElementById("rarm").onclick = actions["b"];
+      document.getElementById("larm").onclick = actions["a"];
+      document.getElementById("rhand").onclick = actions["m"];
+      document.getElementById("lhand").onclick = actions["h"];
+      document.getElementById("rleg").onclick = actions["c"];
+      document.getElementById("lleg").onclick = actions["d"];
+      document.getElementById("rfeet").onclick = actions["p"];
+      document.getElementById("lfeet").onclick = actions["f"];
+    </script>
+  </body>
+</html>

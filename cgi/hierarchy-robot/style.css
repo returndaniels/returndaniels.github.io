@@ -1,0 +1,143 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls-layout {
+  width: 10rem;
+}
+
+.controls-layout > div.row {
+  width: 100%;
+  margin: 0.1rem 0.3rem;
+}
+
+.controls-layout > div.row > div {
+  max-width: 4rem;
+}
+
+
+.controls-layout button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0;
+  transition: all ease .3s;
+}
+
+.controls-layout button:hover {
+  filter: drop-shadow(3px 1px 2px #4444dd);
+}
+
+.controls-layout button#head {
+  background-image: url(./assets/head.png);
+  height: 3rem;
+  width: 5rem;
+}
+
+.controls-layout button#torso {
+  background-image: url(./assets/torso.png);
+  height: 5rem;
+  min-width: 5rem;
+}
+
+.controls-layout button#rshoulder {
+  background-image: url(./assets/rshoulder.png);
+  height: 2.5rem;
+  width: 2.5rem;
+  align-self: flex-end;
+}
+
+.controls-layout button#lshoulder {
+  background-image: url(./assets/lshoulder.png);
+  height: 2.5rem;
+  width: 2rem;
+  align-self: flex-start;
+}
+
+
+.controls-layout button#rarm {
+  background-image: url(./assets/rarm.png);
+  height: 3rem;
+  width: 1.5rem;
+  align-self: center;
+
+}
+
+.controls-layout button#larm {
+  background-image: url(./assets/larm.png);
+  height: 3rem;
+  width: 1.5rem;
+  align-self: center;
+}
+
+.controls-layout button#rhand {
+  background-image: url(./assets/rhand.png);
+  height: 3rem;
+  width: 2rem;
+  margin-left: 5px;
+  align-self: flex-start;
+
+}
+
+.controls-layout button#lhand {
+  background-image: url(./assets/lhand.png);
+  height: 3rem;
+  width: 2rem;
+  margin-left: 5px;
+  align-self: flex-end;
+}
+
+.controls-layout button#rleg {
+  background-image: url(./assets/rleg.png);
+  height: 3rem;
+  width: 2rem;
+  align-self: flex-start;
+
+}
+
+.controls-layout button#lleg {
+  background-image: url(./assets/lleg.png);
+  height: 3rem;
+  width: 2rem;
+  align-self: flex-end;
+}
+
+
+.controls-layout button#rfeet {
+  background-image: url(./assets/rfeet.png);
+  height: 2rem;
+  width: 2rem;
+  align-self: flex-start;
+
+}
+
+.controls-layout button#lfeet {
+  background-image: url(./assets/lfeet.png);
+  height: 2rem;
+  width: 2rem;
+  align-self: flex-end;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
