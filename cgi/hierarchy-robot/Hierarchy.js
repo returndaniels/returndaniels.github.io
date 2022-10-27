@@ -96,45 +96,45 @@ var cube = (function makeCube() {
   // vertices of cube
   // prettier-ignore
   var rawVertices = new Float32Array([
-       -0.5, -0.5, 0.5,
-       0.5, -0.5, 0.5,
-       0.5, 0.5, 0.5,
-       -0.5, 0.5, 0.5,
-       -0.5, -0.5, -0.5,
-       0.5, -0.5, -0.5,
-       0.5, 0.5, -0.5,
-       -0.5, 0.5, -0.5
-     ]);
+        -0.5, -0.5, 0.5,
+        0.5, -0.5, 0.5,
+        0.5, 0.5, 0.5,
+        -0.5, 0.5, 0.5,
+        -0.5, -0.5, -0.5,
+        0.5, -0.5, -0.5,
+        0.5, 0.5, -0.5,
+        -0.5, 0.5, -0.5
+      ]);
 
   // prettier-ignore
   var rawColors = new Float32Array([
-       1.0, 0.0, 0.0, 1.0,  // red
-       0.0, 1.0, 0.0, 1.0,  // green
-       0.0, 0.0, 1.0, 1.0,  // blue
-       1.0, 1.0, 0.0, 1.0,  // yellow
-       1.0, 0.0, 1.0, 1.0,  // magenta
-       0.0, 1.0, 1.0, 1.0,  // cyan
-     ]);
+        1.0, 0.0, 0.0, 1.0,  // red
+        0.0, 1.0, 0.0, 1.0,  // green
+        0.0, 0.0, 1.0, 1.0,  // blue
+        1.0, 1.0, 0.0, 1.0,  // yellow
+        1.0, 0.0, 1.0, 1.0,  // magenta
+        0.0, 1.0, 1.0, 1.0,  // cyan
+      ]);
 
   // prettier-ignore
   var rawNormals = new Float32Array([
-       0, 0, 1,
-       1, 0, 0,
-       0, 0, -1,
-       -1, 0, 0,
-       0, 1, 0,
-       0, -1, 0
-     ]);
+        0, 0, 1,
+        1, 0, 0,
+        0, 0, -1,
+        -1, 0, 0,
+        0, 1, 0,
+        0, -1, 0
+      ]);
 
   // prettier-ignore
   var indices = new Uint16Array([
-       0, 1, 2, 0, 2, 3,  // z face
-       1, 5, 6, 1, 6, 2,  // +x face
-       5, 4, 7, 5, 7, 6,  // -z face
-       4, 0, 3, 4, 3, 7,  // -x face
-       3, 2, 6, 3, 6, 7,  // + y face
-       4, 5, 1, 4, 1, 0   // -y face
-     ]);
+        0, 1, 2, 0, 2, 3,  // z face
+        1, 5, 6, 1, 6, 2,  // +x face
+        5, 4, 7, 5, 7, 6,  // -z face
+        4, 0, 3, 4, 3, 7,  // -x face
+        3, 2, 6, 3, 6, 7,  // + y face
+        4, 5, 1, 4, 1, 0   // -y face
+      ]);
 
   var verticesArray = [];
   var colorsArray = [];
@@ -182,10 +182,10 @@ function makeNormalMatrixElements(model, view) {
   n = n.elements;
   // prettier-ignore
   return new Float32Array([
-       n[0], n[1], n[2],
-       n[4], n[5], n[6],
-       n[8], n[9], n[10]
-     ]);
+        n[0], n[1], n[2],
+        n[4], n[5], n[6],
+        n[8], n[9], n[10]
+      ]);
 }
 
 // A few global variables...
@@ -236,13 +236,13 @@ var rightArmMatrix = new Matrix4().setTranslate(0, -5, 0);
 var rightHandMatrix = new Matrix4().setTranslate(0, -4, 0);
 
 /**  @type {Matrix4} */
-var leftLegMatrix = new Matrix4().setTranslate(2.5, -11, 0);
+var leftLegMatrix = new Matrix4().setTranslate(2, -8, 0);
 /**  @type {Matrix4} */
-var leftFeetMatrix = new Matrix4().setTranslate(0, -4.7, 0);
+var leftFeetMatrix = new Matrix4().setTranslate(0, -5, 0);
 /**  @type {Matrix4} */
-var rightLegMatrix = new Matrix4().setTranslate(-2.5, -11, 0);
+var rightLegMatrix = new Matrix4().setTranslate(-2, -8, 0);
 /**  @type {Matrix4} */
-var rightFeetMatrix = new Matrix4().setTranslate(0, -4.7, 0);
+var rightFeetMatrix = new Matrix4().setTranslate(0, -4, 0);
 
 var leftTorsoAngle = 0.0;
 var leftShoulderAngle = 0.0;
@@ -269,10 +269,10 @@ var rightShoulderMatrixLocal = new Matrix4().setScale(3, 5, 2);
 var rightArmMatrixLocal = new Matrix4().setScale(3, 5, 2);
 var rightHandMatrixLocal = new Matrix4().setScale(1, 3, 3);
 
-var leftLegMatrixLocal = new Matrix4().setScale(3, 10, 2);
-var leftFeetMatrixLocal = new Matrix4().setScale(4, 1, 4);
-var rightLegMatrixLocal = new Matrix4().setScale(3, 10, 2);
-var rightFeetMatrixLocal = new Matrix4().setScale(4, 1, 4);
+var leftLegMatrixLocal = new Matrix4().setScale(3, 5, 2);
+var leftFeetMatrixLocal = new Matrix4().setScale(3, 5, 2);
+var rightLegMatrixLocal = new Matrix4().setScale(3, 5, 2);
+var rightFeetMatrixLocal = new Matrix4().setScale(3, 5, 2);
 
 /**
  * View matrix.
@@ -280,9 +280,9 @@ var rightFeetMatrixLocal = new Matrix4().setScale(4, 1, 4);
  */
 // prettier-ignore
 var view = new Matrix4().setLookAt(
-         20, 20, 20,   // eye
-         0, 0, 0,      // at - looking at the origin
-         0, 1, 0); // up vector - y axis
+          20, 20, 20,   // eye
+          0, 0, 0,      // at - looking at the origin
+          0, 1, 0); // up vector - y axis
 
 /**
  * <p>Projection matrix.</p>
@@ -342,19 +342,35 @@ const actions = {
   },
   c: () => {
     rightLegAngle -= 15;
-    rightLegMatrix.setTranslate(-2.5, -11, 0).rotate(rightLegAngle, 0, 1, 0);
+    var currentLegRot = new Matrix4()
+      .setTranslate(0, 2, 0)
+      .rotate(rightLegAngle, 1, 0, 0)
+      .translate(0, -2, 0);
+    rightLegMatrix.setTranslate(-2, -8, 0).multiply(currentLegRot);
   },
   d: () => {
     leftLegAngle -= 15;
-    leftLegMatrix.setTranslate(2.5, -11, 0).rotate(leftLegAngle, 0, 1, 0);
+    var currentLegRot = new Matrix4()
+      .setTranslate(0, 2, 0)
+      .rotate(leftLegAngle, 1, 0, 0)
+      .translate(0, -2, 0);
+    leftLegMatrix.setTranslate(2, -8, 0).multiply(currentLegRot);
   },
   p: () => {
-    rightFeetAngle -= 15;
-    rightFeetMatrix.setTranslate(0, -4.7, 0).rotate(rightFeetAngle, 0, 1, 0);
+    rightFeetAngle += 15;
+    var currentFeetRot = new Matrix4()
+      .setTranslate(0, 2, 0)
+      .rotate(rightFeetAngle, 1, 0, 0)
+      .translate(0, -2, 0);
+    rightFeetMatrix.setTranslate(0, -5, 0).multiply(currentFeetRot);
   },
   f: () => {
-    leftFeetAngle -= 15;
-    leftFeetMatrix.setTranslate(0, -4.7, 0).rotate(leftFeetAngle, 0, 1, 0);
+    leftFeetAngle += 15;
+    var currentFeetRot = new Matrix4()
+      .setTranslate(0, 2, 0)
+      .rotate(leftFeetAngle, 1, 0, 0)
+      .translate(0, -2, 0);
+    leftFeetMatrix.setTranslate(0, -5, 0).multiply(currentFeetRot);
   },
 };
 
