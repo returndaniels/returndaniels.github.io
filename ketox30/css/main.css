@@ -428,7 +428,7 @@ img {
 
 .topo {
     background-color: #ff3464;
-    background: url("https://returndaniels.github.io/ketox30/img/bg_topo.jpg") no-repeat top center;
+    background: url("/wp-content/themes/ketox30/img/bg_topo.jpg") no-repeat top center;
     /*padding-bottom: 100px;*/
 }
 
@@ -460,7 +460,7 @@ img {
 
 /* PARTE 2 */
 .parte2 {
-    background: url(../img/parte2-bg.png) no-repeat top center #ff3464;
+    background: url(/wp-content/themes/ketox30/img/parte2-bg.png) no-repeat top center #ff3464;
     margin-top: -280px;
     padding-top: 288px;
 }
@@ -474,7 +474,7 @@ img {
 }
 
 .parte2 .parte2BG2 {
-    background: url("../img/parte2bg2.png") no-repeat top center;
+    background: url("/wp-content/themes/ketox30/img/parte2bg2.png") no-repeat top center;
 }
 
 .parte2 h3 {
@@ -503,7 +503,7 @@ img {
 /* PARTE 3*/
 
 .parte3 {
-    background: url(../img/bg_parte2-2.jpg) no-repeat top center #fff;
+    background: url(/wp-content/themes/ketox30/img/bg_parte2-2.jpg) no-repeat top center #fff;
     margin-top: -589px;
     padding-top: 650px;
     font-size: 18px;
@@ -539,7 +539,7 @@ img {
 
 /* Garantia */
 .garantia {
-    background: url("../img/garantia.jpg") no-repeat top center;
+    background: url("/wp-content/themes/ketox30/img/garantia.jpg") no-repeat top center;
     color: #fff;
     font-size: 18px;
     line-height: 30px;
@@ -556,7 +556,7 @@ img {
     font-size: 18px;
     line-height: 30px;
     color: #313131;
-    background: url("../img/bg_bonus.jpg") no-repeat top center;
+    background: url("/wp-content/themes/ketox30/img/bg_bonus.jpg") no-repeat top center;
     margin-top: 145px;
     padding-bottom: 150px;
 }
@@ -674,7 +674,7 @@ img {
     padding-bottom: 20px;
     padding-top: 20px;
     cursor: pointer;
-    background: url("../img/mais_perg.jpg") no-repeat center right;
+    background: url("/wp-content/themes/ketox30/img/mais_perg.jpg") no-repeat center right;
 }
 
 .perguntas .perg:hover {
@@ -682,7 +682,7 @@ img {
 }
 
 .perguntas .perg.ativo {
-    background: url("../img/menos_perg.jpg") no-repeat center right;
+    background: url("/wp-content/themes/ketox30/img/menos_perg.jpg") no-repeat center right;
 }
 
 .perguntas .pergunta {
