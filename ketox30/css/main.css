@@ -757,7 +757,7 @@ footer {
     font-size: 14px;
     line-height: 20px;
     margin-top: 70px;
-    margin-bottom: 70px;
+    /* margin-bottom: 70px; */
     color: #fff;
     padding-top: 30px;
     background-color: #FF3464 !important;
