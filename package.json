@@ -1,0 +1,26 @@
+{
+  "name": "returndaniels.github.io",
+  "version": "1.0.0",
+  "description": "Este é o meu site pessoal e pode ser acessado clicando [aqui](https://returndaniels.github.io/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npx gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/returndaniels/returndaniels.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/returndaniels/returndaniels.github.io/issues"
+  },
+  "homepage": "https://github.com/returndaniels/returndaniels.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-livereload": "^4.0.2"
+  }
+}
