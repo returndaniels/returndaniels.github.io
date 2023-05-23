@@ -1,0 +1,22 @@
+# Ignorar arquivos e diretórios específicos
+
+# Arquivos e diretórios de build
+/dist/
+/out/
+/build/
+/public/
+
+# Dependências geradas pelo gerenciador de pacotes
+/node_modules/
+/bower_components/
+
+# Arquivos de configuração sensíveis
+.env
+.env.*
+config.js
+
+# Ignorar arquivos de cache do npm e yarn
+/.npm/
+/package-lock.json
+/yarn.lock
+/yarn-error.log
